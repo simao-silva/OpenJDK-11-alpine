@@ -1,10 +1,11 @@
-ARG ALPINE_VERSION=
+ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
 
-ENV JAVA_HOME="/usr/lib/jvm/default-jvm/"
+RUN apk add --no-cache openjdk11 && \
+    rm -rf /var/cache/apk/* /tmp/*
 
-RUN apk add --no-cache openjdk11
+ENV JAVA_HOME="/usr/lib/jvm/default-jvm/"
 
 ENV PATH=${PATH}:${JAVA_HOME}/bin
 
