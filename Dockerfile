@@ -1,6 +1,4 @@
-ARG ALPINE_VERSION
-
-FROM alpine:${ALPINE_VERSION}
+FROM alpine:3.14.3
 
 RUN apk add --no-cache openjdk11 && \
     rm -rf /var/cache/apk/* /tmp/*
