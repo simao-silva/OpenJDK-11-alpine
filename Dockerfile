@@ -1,6 +1,7 @@
 FROM alpine:3.15.0
 
-RUN apk add --no-cache openjdk11 && \
+RUN apk update && \
+    apk add --no-cache openjdk11 && \
     rm -rf /var/cache/apk/* /tmp/*
 
 ENV JAVA_HOME="/usr/lib/jvm/default-jvm/"
