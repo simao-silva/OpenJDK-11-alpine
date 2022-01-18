@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - Dockerfile      
+      - Dockerfile
 
 env:
   IMAGE_NAME: "simaofsilva/openjdk11-alpine"
