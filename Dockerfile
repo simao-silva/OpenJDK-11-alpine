@@ -1,6 +1,6 @@
 FROM alpine:3.16.1
 
-ARG VERSION="11.0.15_p10-r1" # renovate: datasource=repology depName=alpine_3_16/openjdk11 versioning=loose
+ARG VERSION="11.0.16_p8-r0" # renovate: datasource=repology depName=alpine_3_16/openjdk11 versioning=loose
 
 RUN apk update && \
     apk add --no-cache openjdk11="${VERSION}" && \
