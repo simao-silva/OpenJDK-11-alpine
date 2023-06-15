@@ -1,4 +1,4 @@
-FROM alpine:3.18.0
+FROM alpine:3.18.2
 
 ARG VERSION="11.0.19_p7-r0" # renovate: datasource=repology depName=alpine_3_17/openjdk11 versioning=loose
 
