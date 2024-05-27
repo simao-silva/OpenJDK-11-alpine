@@ -58,4 +58,3 @@ jobs:
             ${{ env.IMAGE_NAME }}:${{ steps.version-tag.outputs.VERSION }}
             ${{ env.IMAGE_NAME }}:latest
           file: Dockerfile
-

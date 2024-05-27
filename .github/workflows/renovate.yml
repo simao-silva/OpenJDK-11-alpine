@@ -1,0 +1,24 @@
+name: "Verify Renovate configuration"
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts'
+
+      - name: Install Renovate
+        run: |
+          npm i -g renovate@latest
+          renovate --version
+
+      - name: Verify Renovate configuration
+        run: renovate-config-validator --strict
