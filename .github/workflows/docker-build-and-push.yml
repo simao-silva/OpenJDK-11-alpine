@@ -1,4 +1,4 @@
-name: build and push image
+name: Build and Push Image
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
         id: version-tag
         run: |
           docker run --rm myimage:latest sh -c "apk info openjdk11 2>/dev/null | head -n 1 | cut -d ' ' -f 1 | sed 's|openjdk11-||g' | cut -d '_' -f 1" > /tmp/version.txt
-          echo "::set-output name=VERSION::$(cat /tmp/version.txt)"
+          echo "VERSION=$(cat /tmp/version.txt)" >> $GITHUB_OUTPUT
 
       - name: Print tag
         run: |

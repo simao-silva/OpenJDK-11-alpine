@@ -1,4 +1,4 @@
-name: "test pull request"
+name: "Dry-run on PRs"
 
 on: [pull_request]
 
