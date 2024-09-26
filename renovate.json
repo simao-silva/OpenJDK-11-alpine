@@ -10,16 +10,21 @@
         "major",
         "minor",
         "patch",
-        "digest"
+        "pin",
+        "pinDigest",
+        "digest",
+        "replacement"
       ],
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "ignoreTests": false
     },
     {
-      "matchPackagePatterns": [
-        "docker.io/library/alpine"
-      ],
-      "commitMessageTopic": "Alpine Linux repositories"
+      "commitMessageTopic": "Alpine Linux repositories",
+      "matchPackageNames": [
+        "/docker.io/library/alpine/"
+      ]
     }
   ],
   "customManagers": [
