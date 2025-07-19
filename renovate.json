@@ -6,6 +6,12 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
+      "commitMessageTopic": "Alpine Linux repositories",
+      "matchPackageNames": [
+        "/docker.io/library/alpine/"
+      ]
+    },
+    {
       "matchUpdateTypes": [
         "major",
         "minor",
@@ -19,19 +25,13 @@
       "automergeType": "pr",
       "automergeStrategy": "squash",
       "ignoreTests": false
-    },
-    {
-      "commitMessageTopic": "Alpine Linux repositories",
-      "matchPackageNames": [
-        "/docker.io/library/alpine/"
-      ]
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "Dockerfile"
+      "managerFilePatterns": [
+        "/Dockerfile/"
       ],
       "matchStrings": [
         ".*VERSION=.(?<currentValue>.*). # renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?"
@@ -40,8 +40,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "Dockerfile"
+      "managerFilePatterns": [
+        "/Dockerfile/"
       ],
       "matchStrings": [
         "# renovate: datasource=repology depName=alpine_(?<currentValue>\\d+[._]\\d+)"
